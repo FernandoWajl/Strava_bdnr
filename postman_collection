@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "6f01fde1-7c2a-4a91-9c39-e7dec5867142",
+		"name": "BDNR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create activity metric",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gps_latitude\": 1.13,\r\n    \"gps_longitude\": 87.1,\r\n    \"avg_speed\": 5.9,\r\n    \"calories_burned\": 2,\r\n    \"created_at\": 1624664391212,\r\n    \"cadence\":1\r\n}\r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/activity/60d8a6fc4905c7197c3efc76/metric",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity",
+						"60d8a6fc4905c7197c3efc76",
+						"metric"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get activities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/activity?from=2021-06-25T19:58:26.981Z&to=2021-06-25T19:58:26.981Z",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2021-06-25T19:58:26.981Z"
+						},
+						{
+							"key": "to",
+							"value": "2021-06-25T19:58:26.981Z"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create activity publication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"example\",\r\n    \"user_id\": \"id 1\",\r\n    \"created_on\":\"2021-06-25T19:58:26.981Z\",\r\n    \"type\": \"PUBLICATION\",\r\n    \"activity\": { \"text\": \"aaa\" }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/activity",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create activity picture",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"example\",\r\n    \"user_id\": \"id 1\",\r\n    \"created_on\":\"2021-06-25T19:58:26.981Z\",\r\n    \"type\": \"PICTURE\",\r\n    \"activity\": { \"url\": \"url\", \"comment\": \"a comment\" }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/activity",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3892/users/60d25d2fdf1fc62ecaf04206",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3892",
+					"path": [
+						"users",
+						"60d25d2fdf1fc62ecaf04206"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create activity physical manual",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"example\",\r\n    \"user_id\": \"id 1\",\r\n    \"created_on\":\"2021-06-25T19:58:26.981Z\",\r\n    \"type\": \"PHYSICAL\",\r\n    \"activity\": { \r\n        \"type\": \"SWIMMING\", \r\n        \"registration_type\": \"MANUAL\",\r\n        \"data\": {\r\n            \"duration\": 3.0,\r\n            \"distance\": 3.1,\r\n            \"picture\": \"picture\",\r\n            \"description\": \"description\" ,\r\n            \"perceived_exertion\": \"EASY\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/activity",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3892/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3892",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"otro\",\n    \"email\": \"otro@gmail.com\",\n    \"password\": \"otro\",\n    \"birthday\": \"2021/06/30\",\n    \"account_type\" : 1,\n    \"gender\": \"male\",\n    \"heigth\" : 181.4,\n    \"weigth\" : 80.3,\n    \"ubication\" : {\n        \"x\": 4,\n        \"y\": -4\n    },\n    \"biography\": \"This is my biography\",\n    \"opt_ins\": [\n        {\n            \"name\": \"Notifications\"\n        }\n    ],\n    \"equipment\": [{\n        \"name\" : \"shoes\"\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3892/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3892",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create activity physical automatic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"example\",\r\n    \"user_id\": \"id 1\",\r\n    \"created_on\":\"2021-06-25T19:58:26.981Z\",\r\n    \"type\": \"PHYSICAL\",\r\n    \"activity\": { \r\n        \"type\": \"SWIMMING\",\r\n        \"registration_type\": \"AUTOMATIC\",\r\n        \"data\": {}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/activity",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Finish activity",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/activity/60d89c92e036a53b60658f49/finish",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activity",
+						"60d89c92e036a53b60658f49",
+						"finish"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
