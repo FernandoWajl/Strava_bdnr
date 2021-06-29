@@ -12,8 +12,16 @@ const ACTIVITY_TYPE_DICTIONARY = {
 };
 
 const activitySchema = new Schema({
-  kudos_from__user: { type: [String], default: [] },
-  comments_from_users: { type: [String], default: [] },
+  kudos_from_users: { type: [String], default: [] },
+  comments_from_users: {
+    type: [
+      {
+        comment: String,
+        user_id: String,
+      },
+    ],
+    default: [],
+  },
   title: { type: String, required: true },
   user_id: { type: String, required: true },
   created_on: { type: Date, required: true },
