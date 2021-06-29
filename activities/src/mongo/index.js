@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const server = process.env.MONGO_DB_ADDRESS || "mongodb://127.0.0.1:27017/BDNR";
+const server =
+  process.env.MONGO_DB_ADDRESS || "mongodb://127.0.0.1:27017/strava_db";
 
 const connectToDb = async () => {
   await mongoose.connect(server, {
